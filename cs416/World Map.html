@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .container {
+          position: relative;
+          text-align: center;
+          color: white;
+        }
+        
+        .centered {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 1.5em;
+          font-family: 'Lato';
+          color: white;
+        }
+        .p {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 1em;
+          font-family: 'Lato';
+          color: white; 
+        }
+        </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project Mengliu Chen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" integrity="sha512-4rPgyv5iG0PZw8E+oRdfN/Gq+yilzt9rQ8Yci2jJ15rAyBmF0HBE4wFjBkoB72cxBeg63uobaj1UcNt/scV93w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="main.css">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<!-- jQueryUI styling -->
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<body>
+    <div id="fullpage">
+        <div class="section s0">
+            <img src = "https://www.ioes.ucla.edu/wp-content/uploads/2021/01/burningplanet.jpg" style = "width:100%">
+            <div class="centered">The Climate Change: Global Temperature 1993 - 2022 <br /> Data Visualization Final Project <br /> Mengliu Chen</div>     
+        </div>
+
+
+        <div class="section s1">
+            <div class="container">
+                <div class="row">
+                    <div class = "slideshow">
+                        <h1>Global Temperature Anomalies</h1>
+                        <input type="range" id="yearSlider" min="1993" max="2022" step="1" value="1993">
+                        <div class = "slider-label" id = "yearLabel">1993</div>
+                        <style>
+                            .slideshow img{
+                                display: none;
+                            }
+                            .slideshow img.active{
+                                display: block;
+                            }
+                            .slider-label{
+                                width: 100%;
+                                font-size: 14px;
+                                font-weight: bold;
+                                color: black;
+                            }
+                            .slider-info{
+                                flex:1;
+                                font-size: 16px;
+                            }
+                        </style>
+                        <img src="map1993.png" alt="Image 1", class = "active">
+                        <img src="map1994.png" alt="Image 2">
+                        <img src="map1995.png" alt="Image 3"> 
+                        <img src="map1996.png" alt="Image 4"> 
+                        <img src="map1997.png" alt="Image 5"> 
+                        <img src="map1998.png" alt="Image 6"> 
+                        <img src="map1999.png" alt="Image 7">
+                        <img src="map2000.png" alt="Image 8">
+                        <img src="map2001.png" alt="Image 9"> 
+                        <img src="map2002.png" alt="Image 10">
+                        <img src="map2003.png" alt="Image 11"> 
+                        <img src="map2004.png" alt="Image 12">
+                        <img src="map2005.png" alt="Image 13">
+                        <img src="map2006.png" alt="Image 14"> 
+                        <img src="map2007.png" alt="Image 15"> 
+                        <img src="map2008.png" alt="Image 16">
+                        <img src="map2009.png" alt="Image 17"> 
+                        <img src="map2010.png" alt="Image 18"> 
+                        <img src="map2011.png" alt="Image 19">
+                        <img src="map2012.png" alt="Image 20">
+                        <img src="map2013.png" alt="Image 21">
+                        <img src="map2014.png" alt="Image 22">
+                        <img src="map2015.png" alt="Image 23">
+                        <img src="map2016.png" alt="Image 24">
+                        <img src="map2017.png" alt="Image 25">
+                        <img src="map2018.png" alt="Image 26">
+                        <img src="map2019.png" alt="Image 27">
+                        <img src="map2020.png" alt="Image 28">
+                        <img src="map2021.png" alt="Image 29">
+                        <img src="map2022.png" alt="Image 30">                         
+                    </div>
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script src="index.js"></script>
+                </div>
+                <div class = "slideshow-info">
+                    <p>
+                        The animation shows the change in global surface temperatures. Dark blue shows areas cooler than average. Dark red shows areas warmer than average. 
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section s2">
+            <div class="container">
+            <h1>Global Land and Ocean Temperature Anomalies</h1>
+
+            <div class="container">
+                <div class="row">
+                    <h4></h4>
+                    <script type="text/javascript">
+                    window.onload = function () {
+                    CanvasJS.addColorSet("blueShades",
+                            [//colorSet Array
+
+                                "#B0E0E6",
+                                "#ADD8E6",
+                                "#87CEFA",
+                                "#87CEEB",
+                                "#00BFFF",
+                                "#1E90FF",
+                                "#4682B4"
+                            ]);
+                    var chart = new CanvasJS.Chart("chartContainer",
+                    {
+                        colorSet: "blueShades",
+                        title:{
+                        text: "Global Land and Ocean June Temperature Anomalies in Degrees Celsius",
+                        fontSize:15
+                        },
+                        axisX:{
+                            title: "Year",
+                            labelFontSize: 10,
+                            titleFontColor: "black"
+                            },
+                        axisY:{
+                            title:"Temperature",
+                            labelFontSize: 15,
+                            titleFontColor: "black"
+                            },
+      
+                        data: [
+                            {
+                            type: "column",
+                            showInLegend:true,
+                            legendText: "Land",
+                            color: "#4682B4",
+                            dataPoints: [
+                            { x: 1993, y: 0.29 },
+                            { x: 1994, y: 0.7},
+                            { x: 1995, y: 0.82},
+                            { x: 1996, y: 0.42},
+                            { x: 1997, y: 0.72},
+                            { x: 1998, y: 1.11},
+                            { x: 1999, y: 0.48},
+                            { x: 2000, y: 0.54},
+                            { x: 2001, y: 0.68},
+                            { x: 2002, y: 0.57},
+                            { x: 2003, y: 0.58},
+                            { x: 2004, y: 0.55},
+                            { x: 2005, y: 0.97},
+                            { x: 2006, y: 0.97},
+                            { x: 2007, y: 0.83},
+                            { x: 2008, y: 0.7},
+                            { x: 2009, y: 0.67},
+                            { x: 2010, y: 0.99},
+                            { x: 2011, y: 0.95},
+                            { x: 2012, y: 1.04},
+                            { x: 2013, y: 1.03},
+                            { x: 2014, y: 0.84},
+                            { x: 2015, y: 1.16},
+                            { x: 2016, y: 0.95},
+                            { x: 2017, y: 0.9},
+                            { x: 2018, y: 1},
+                            { x: 2019, y: 1.16},
+                            { x: 2020, y: 1.3},
+                            { x: 2021, y: 1.25},
+                            { x: 2022, y: 1.3 }
+                        ]
+                        },
+                        {
+                            type: "column",
+                            showInLegend:true,
+                            legendText: "Ocean",
+                            color: "lightblue",
+                            dataPoints: [
+                            { x: 1993, y: 0.33},
+                            { x: 1994, y: 0.31},
+                            { x: 1995, y: 0.35},
+                            { x: 1996, y: 0.35},
+                            { x: 1997, y: 0.49},
+                            { x: 1998, y: 0.6},
+                            { x: 1999, y: 0.32},
+                            { x: 2000, y: 0.28},
+                            { x: 2001, y: 0.49},
+                            { x: 2002, y: 0.44},
+                            { x: 2003, y: 0.52},
+                            { x: 2004, y: 0.49},
+                            { x: 2005, y: 0.44},
+                            { x: 2006, y: 0.52},
+                            { x: 2007, y: 0.5},
+                            { x: 2008, y: 0.46},
+                            { x: 2009, y: 0.42},
+                            { x: 2010, y: 0.62},
+                            { x: 2011, y: 0.57},
+                            { x: 2012, y: 0.48},
+                            { x: 2013, y: 0.49},
+                            { x: 2014, y: 0.51},
+                            { x: 2015, y: 0.67},
+                            { x: 2016, y: 0.74},
+                            { x: 2017, y: 0.78},
+                            { x: 2018, y: 0.7},
+                            { x: 2019, y: 0.64},
+                            { x: 2020, y: 0.79},
+                            { x: 2021, y: 0.76},
+                            { x: 2022, y: 0.67}
+                        ]
+                        }
+                        ]
+                     });
+
+                        chart.render();
+                    }
+                    </script>
+                    <script type="text/javascript" src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+                    <div id="chartContainer" style="margin-top: 70px; height: 500px; width: 100%;"></div>
+                </div>
+                <div class="bar-text">
+                    <h2></h2>
+                    <p>Given the tremendous size and heat capacity of the global oceans, it takes a massive amount of heat energy to raise Earth’s average yearly surface temperature even a small amount. The roughly 2-degree Fahrenheit (1 degrees Celsius) increase in global average surface temperature that has occurred since the pre-industrial era (1880-1900) might seem small, but it means a significant increase in accumulated heat.
+                    </p>
+                </div>
+            </div> 
+            </div>        
+        </div>
+        
+        <div class="section s3">
+            <div class="container">
+                <div id="selections" class="row">
+                    <h1>Asia and North America Land & Ocean Temperature </h1>
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                    <canvas id="lineChart" style="background-color: white;"></canvas>
+                    <button id = "toggleButton">Click to See the Changes between Asia and North America</button>
+                    <script src="line-chart.js"></script>  
+                </div>
+                <div class="bar-text">
+                    <style>
+                        p{
+                            color:red
+                        }
+                    </style>
+                    <h2></h2>
+                    <p>The comparison of Asia and North America with global temperature changes reveals distinct regional variations and trends. While both regions experience the impact of global temperature changes, their unique geographic and climatic characteristics influence the magnitude and timing of these changes.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+
+        
+        
+
+        <div class="section s4">
+            <div id="reference">
+                <h1>References and Resources</h1>
+                <h2>Github Project</h2>
+                <ul>
+                    <li><a href='https://github.com/xngwu1995/cs416-final-project.git' target='_blank'>CS416 DDV Final Project</a></li>
+                </ul>
+                <h2>Images</h2>
+                <ul>
+                    <li><a href='https://images.unsplash.com/photo-1528035015334-80868324e60e?ixlib' target='_blank'>Background</a></li>
+                    <li><a href='https://www.ioes.ucla.edu/wp-content/uploads/2021/01/burningplanet.jpg' target='_blank'
+                        >First</a></li>
+                    <li><a href='https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80' target='_blank'>Reference</a></li>
+                </ul>
+                <h2>Chart</h2>
+                <ul>
+                    <li><a href='https://github.com/adamjanes/udemy-d3' target='_blank'>Mastering data visualization in D3.js</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js" integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        new fullpage('#fullpage', {
+            autoScrolling: true,
+            navigation: true,
+            anchors: ['section0','section1', 'section2', 'section3','section4'],
+            navigationTooltips:['Intro', 'Scene1', 'Scene2', 'Scene3', 'Ref'],
+            showActiveTooltip: true,
+            scrollingSpeed: 1000,
+        
+        })
+    </script>
+    	<!-- External JS libraries -->
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="crossorigin="anonymous"></script>
+	<script src="js/d3-tip.js"></script>
+	<!-- Custom JS -->
+	<script src="js/overview.js"></script>
+    <script src="js/Bar.js"></script>
+	<script src="js/barChart.js"></script>
+	<script src="js/linechart.js"></script>
+    <script src="js/annotations.js"></script>
+
+
+</body>
+</html>
+    
